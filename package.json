@@ -1,0 +1,8 @@
+{
+  "name": "beacon-wechat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:targetworks-studio/beacon-wechat.git",
+  "author": "RSzyh <750332908@qq.com>",
+  "license": "MIT"
+}
