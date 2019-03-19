@@ -7,5 +7,30 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#1989fa",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/habit/index/index",
+        "text": "主页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-selected.png"
+      },
+      {
+        "pagePath": "pages/habit/index/index",
+        "text": "习惯"
+      },
+      {
+        "pagePath": "pages/habit/index/index",
+        "text": "目标"
+      },
+      {
+        "pagePath": "pages/habit/index/index",
+        "text": "团队"
+      }
+    ]
   }
 }
