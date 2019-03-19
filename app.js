@@ -8,19 +8,24 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        if (res.code) {
-          http.get('auth', { code: res.code }).then(r => {
-            console.log(r.data);
-          }).catch(e => {
-            console.log(e);
-          });
-        }
+    // check if session expired
+    wx.checkSession({
+      fail: () => {
+        // login
+        wx.login({
+          success: res => {
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            if (res.code) {
+              http.get('auth', { code: res.code }).then(r => {
+                console.log(r.data);
+              }).catch(e => {
+                console.log(e);
+              });
+            }
+          }
+        });
       }
-    })
+    });
     // 获取用户信息
     wx.getSetting({
       success: res => {
