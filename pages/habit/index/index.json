@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "habit-list": "/components/habit/list/index"
+  }
+}
