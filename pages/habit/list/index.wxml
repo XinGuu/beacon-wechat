@@ -1,0 +1,6 @@
+<view>
+  <block wx:for="{{list}}" wx:key="id" wx:for-index="idx" wx:for-item="item">
+    <switch id="habitList-{{idx}}" type="checkbox" checked="{{item.checked}}" bindchange="switchChange" />
+    <view>{{item.name}}</view>
+  </block>
+</view>
