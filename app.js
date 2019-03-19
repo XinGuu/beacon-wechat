@@ -13,7 +13,7 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
-          http._get('auth', { code: res.code }).then(r => {
+          http.get('auth', { code: res.code }).then(r => {
             console.log(r.data);
           }).catch(e => {
             console.log(e);
