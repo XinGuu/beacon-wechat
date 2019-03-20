@@ -3,29 +3,6 @@ const http = require('./utils/http.js');
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // check if session expired
-    wx.checkSession({
-      fail: () => {
-        // login
-        wx.login({
-          success: res => {
-            // 发送 res.code 到后台换取 openId, sessionKey, unionId
-            if (res.code) {
-              http.get('auth', { code: res.code }).then(r => {
-                console.log(r.data);
-              }).catch(e => {
-                console.log(e);
-              });
-            }
-          }
-        });
-      }
-    });
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -34,8 +11,29 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-              console.log(res);
+              this.globalData.userInfo = res.userInfo;
+              // check if session expired
+              wx.checkSession({
+                fail: () => {
+                  // login
+                  wx.login({
+                    success: res => {
+                      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                      if (res.code) {
+                        http.post('auth', {
+                          code: res.code,
+                          nick_name: this.globalData.userInfo.nickName
+                        }).then(r => {
+                          console.log(r.data);
+                          wx.setStorageSync('Authorization', r.data);
+                        }).catch(e => {
+                          console.log(e);
+                        });
+                      }
+                    }
+                  });
+                }
+              });
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -43,7 +41,7 @@ App({
                 this.userInfoReadyCallback(res)
               }
             }
-          })
+          });
         }
       }
     })
