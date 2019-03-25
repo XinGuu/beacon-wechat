@@ -26,25 +26,38 @@ Component({
         }],
       });
     },
-    increase(id) {
-      console.log('increase', id);
+    increase(idx) {
+      console.log('increase', idx);
+      const nlist = this.data.list;
+      nlist[idx].today++;
+      nlist[idx].frequency++;
+      this.setData({
+        list: nlist,
+      });
     },
-    decrease(id) {
-      console.log('decrease', id);
+    decrease(idx) {
+      console.log('decrease', idx);
+      const nlist = this.data.list;
+      nlist[idx].today--;
+      nlist[idx].frequency--;
+      this.setData({
+        list: nlist,
+      });
     },
     habitListTap(e) {
       const id = e.currentTarget.dataset.id;
+      const idx = e.currentTarget.dataset.idx;
       switch (e.target.dataset.type) {
         case 'increase':
-          this.increase(id);
+          this.increase(idx);
           break;
         case 'item':
           // go to detail
           // TODO: jump to detail page
-          console.log('item', id);
+          console.log('item', idx);
           break;
         case 'decrease':
-          this.decrease(id);
+          this.decrease(idx);
           break;
         default:
           break;

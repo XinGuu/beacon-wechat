@@ -3,13 +3,17 @@
     class="list-container"
     bindtap="habitListTap"
     data-id="{{item.id}}"
+    data-idx="{{idx}}"
     wx:for="{{list}}"
     wx:key="id"
     wx:for-index="idx"
     wx:for-item="item"
   >
     <view class="btn-box ripple" data-type="increase">increase</view>
-    <view class="content-box ripple" data-type="item">{{item.name}}</view>
+    <view class="content-box ripple" data-type="item">
+      <view data-type="item">{{item.name}}</view>
+      <view class="addtional" data-type="item"> >>{{item.today}}</view>
+    </view>
     <view class="btn-box ripple" data-type="decrease">decrease</view>
   </view>
 </view>

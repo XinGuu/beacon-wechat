@@ -22,12 +22,18 @@
 
 .content-box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 60%;
   height: 100%;
   background: #f0fcff;
   outline: solid 1rpx #c2ccd0;
+}
+
+.addtional {
+  font-size: 24rpx;
+  color: #808080;
 }
 
 .ripple {
