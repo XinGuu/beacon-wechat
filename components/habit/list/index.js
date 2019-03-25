@@ -10,28 +10,44 @@ Component({
         list: [{
           id: 0,
           name: '吃早餐',
-          checked: true,
+          frequency: 0,
+          today: 0,
         }, {
           id: 1,
           name: '20分钟有氧运动',
-          checked: false,
+          frequency: 0,
+          today: 0,
         }, {
           id: 2,
           name: '处理邮件',
-          checked: true,
+          frequency: 0,
+          today: 0,
         }],
       });
     },
-    switchChange: function(e) {
-      console.log('3', this);
-      if (e.target.id !== '') {
-        const idx = +e.target.id.substring(10);// get index of target in list
-        this.data.list[idx].checked = e.detail.value;
-        this.setData({
-          list: this.data.list,
-        });
-      }
+    increase(id) {
+      console.log('increase', id);
     },
+    decrease(id) {
+      console.log('decrease', id);
+    },
+    habitListTap(e) {
+      const id = e.currentTarget.dataset.id;
+      switch (e.target.dataset.type) {
+        case 'increase':
+          this.increase(id);
+          break;
+        case 'item':
+          // go to detail
+          console.log('item', id);
+          break;
+        case 'decrease':
+          this.decrease(id);
+          break;
+        default:
+          break;
+      }
+    }
   },
   lifetimes: {
     attached() {
