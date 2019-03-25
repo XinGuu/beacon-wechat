@@ -5,6 +5,7 @@ Component({
   methods: {
     getData() {
       // send initial http request here
+      // TODO: get initial data from backend
       console.log('get data');
       this.setData({
         list: [{
@@ -39,6 +40,7 @@ Component({
           break;
         case 'item':
           // go to detail
+          // TODO: jump to detail page
           console.log('item', id);
           break;
         case 'decrease':
