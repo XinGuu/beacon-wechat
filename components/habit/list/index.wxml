@@ -8,8 +8,8 @@
     wx:for-index="idx"
     wx:for-item="item"
   >
-    <view class="btn-box" data-type="increase">increase</view>
-    <view class="content-box" data-type="item">{{item.name}}</view>
-    <view class="btn-box" data-type="decrease">decrease</view>
+    <view class="btn-box ripple" data-type="increase">increase</view>
+    <view class="content-box ripple" data-type="item">{{item.name}}</view>
+    <view class="btn-box ripple" data-type="decrease">decrease</view>
   </view>
 </view>
