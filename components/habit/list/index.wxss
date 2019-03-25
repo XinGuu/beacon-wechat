@@ -1,1 +1,26 @@
 /* demo/habit/list/index.wxss */
+.list-container {
+  display: flex;
+  align-items: center;
+  height: 150rpx;
+}
+
+.btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  background: #ffb6e1;
+  outline: solid 1rpx #ff9dd6;
+}
+
+.content-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  background: #f0fcff;
+  outline: solid 1rpx #c2ccd0;
+}
