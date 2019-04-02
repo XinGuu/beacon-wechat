@@ -1,11 +1,15 @@
 {
   "pages":[
-    "pages/habit/index/index"
+    "pages/Home/index/index",
+    "pages/habit/index/index",
+    "pages/Aim/index/index",
+    "pages/Profile/index/index"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Beacon",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
@@ -14,22 +18,28 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/habit/index/index",
+        "pagePath": "pages/Home/index/index",
         "text": "主页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-selected.png"
       },
       {
         "pagePath": "pages/habit/index/index",
-        "text": "习惯"
+        "text": "习惯",
+        "iconPath": "images/Habit.png",
+        "selectedIconPath": "images/Habit-selected.png"
       },
       {
-        "pagePath": "pages/habit/index/index",
-        "text": "目标"
+        "pagePath": "pages/Aim/index/index",
+        "text": "目标",
+        "iconPath": "images/Aim.png",
+        "selectedIconPath": "images/Aim-selected.png"
       },
       {
-        "pagePath": "pages/habit/index/index",
-        "text": "团队"
+        "pagePath": "pages/Profile/index/index",
+        "text": "我的",
+        "iconPath": "images/Profile.png",
+        "selectedIconPath": "images/Profile-selected.png"
       }
     ]
   }
